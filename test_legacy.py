@@ -27,4 +27,3 @@ def test_price_with_loyalty():
     assert price_with_loyalty(100,0)==100-(100*0//100)
     assert price_with_loyalty(100,3)==100-(100*5/100)
   
-

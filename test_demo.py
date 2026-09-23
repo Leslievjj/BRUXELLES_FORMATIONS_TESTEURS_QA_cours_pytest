@@ -22,12 +22,26 @@ def my_div(a,b):
     return a/b
 
 def test_my_div():
-    assert my_div(8,4)== 2
+    assert my_div(8, 2) == 4
+    assert my_div(9, 3) == 3
 
-def test_my_div_error():
-    with pytest.raises(ZeroDivisionError,match="division by zero"):
-        my_div(8,0)
+def test_my_div_zero_error():
+    with pytest.raises(ZeroDivisionError, match="division by zero"):
+        my_div(8, 0)
 
-    
+# print(my_div(8, 0))
 
+# msg_error_pif.py
+ERROR_WHILE_STRING = "La value ne peut pas être un string"
+
+def function_au_pif(value):
+    if type(value) == str:
+        raise ValueError(ERROR_WHILE_STRING)
+    if type(value) == bool:
+        raise ValueError('La value ne peut pas être un bool')
+    return True
+
+def test_pif_str():
+    with pytest.raises(ValueError, match=ERROR_WHILE_STRING):
+        function_au_pif(True)
 

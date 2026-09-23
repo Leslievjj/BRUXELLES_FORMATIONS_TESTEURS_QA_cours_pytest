@@ -55,6 +55,9 @@ def apply_promo(total_cents, promo):
     Règles :
     - promo None                     -> total inchangé
     - promo inactive                 -> ValueError
+
+    ###solo se puede testear si el code est active
+    
     - quota d'utilisations atteint   -> ValueError
     - percent_off hors de 1..100     -> ValueError
     La remise est calculée en centimes entiers (arrondi vers le bas).
